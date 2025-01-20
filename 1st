@@ -1,0 +1,34 @@
+import React from 'react';
+import {View, Text, Image, ScrollView, TextInput} from 'react-native';
+
+const App = () => {
+  return (
+    <ScrollView>
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Text>1st interactive react</Text>
+        <Text>Some 2nd interactive react</Text>
+        <Image
+          source={{
+            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
+          }}
+          style={{width: 200, height: 200}}
+        />
+      </View>
+      <TextInput
+        style={{
+          height: 40,
+          borderColor: 'gray',
+          borderWidth: 1,
+         
+        }}
+        defaultValue="Hazel joy sabiaga"
+      />
+    </ScrollView>
+  );
+};
+
+export default App;
