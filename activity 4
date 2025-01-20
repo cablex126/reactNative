@@ -1,0 +1,52 @@
+import React, {useState} from 'react';
+import {Text, StyleSheet} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const TextInANest = () => {
+  const [titleText, setTitleText] = useState("Hazel Joy Sabiaga");
+
+  const bodyText = 'My name is Hazel Joy Sabiaga my role in sysarc is back end my experience in sysarc is difficult because its hard to me to keep up with the group although my time is not easy to manage becuase im working student when they have group Im n the work and I feel like Im burden that is why i resign to my work to focus more in study but is';
+  <SafeAreaProvider>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.baseText}>
+           I am bold wonderful journey to me since I learn myself to grow more.
+        <Text style={styles.innerText}> and red</Text>
+      </Text>
+    </SafeAreaView>
+  </SafeAreaProvider>
+  
+  const onPressTitle = () => {
+    setTitleText("Information [pressed]");
+  };
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.baseText}>
+          <Text style={styles.titleText} onPress={onPressTitle}>
+            {titleText}
+            {'\n'}
+            {'\n'}
+          </Text>
+          <Text numberOfLines={8}>{bodyText}</Text>
+        </Text>
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  baseText: {
+    textAlign: 'center',
+    fontFamily: 'bold',
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+});
+
+export default TextInANest;
