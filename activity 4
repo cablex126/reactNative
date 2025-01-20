@@ -1,20 +1,16 @@
-import React, {useState} from 'react';
-import {Text, StyleSheet} from 'react-native';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+import React, { useState } from 'react';
+import { Text, StyleSheet } from 'react-native';
+import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 const TextInANest = () => {
   const [titleText, setTitleText] = useState("Hazel Joy Sabiaga");
 
-  const bodyText = 'My name is Hazel Joy Sabiaga my role in sysarc is back end my experience in sysarc is difficult because its hard to me to keep up with the group although my time is not easy to manage becuase im working student when they have group Im n the work and I feel like Im burden that is why i resign to my work to focus more in study but is';
-  <SafeAreaProvider>
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.baseText}>
-           I am bold wonderful journey to me since I learn myself to grow more.
-        <Text style={styles.innerText}> and red</Text>
-      </Text>
-    </SafeAreaView>
-  </SafeAreaProvider>
-  
+  const bodyTextBefore = `My name is Hazel Joy Sabiaga. My role in Sysarc is back end. 
+  My experience in Sysarc is difficult because it's hard for me to keep up with the group. 
+  Although my time is not easy to manage because I'm a working student, when they have group meetings, 
+  I'm at work, and I feel like I'm a burden. That is why I resigned from my work to focus more on my studies.`;
+  const bodyTextHighlight = `a wonderful journey to me since I learned how to grow more.`;
+
   const onPressTitle = () => {
     setTitleText("Information [pressed]");
   };
@@ -28,7 +24,8 @@ const TextInANest = () => {
             {'\n'}
             {'\n'}
           </Text>
-          <Text numberOfLines={8}>{bodyText}</Text>
+          <Text>{bodyTextBefore} </Text>
+          <Text style={styles.highlightText}>{bodyTextHighlight}</Text>
         </Text>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -38,13 +35,20 @@ const TextInANest = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
   },
   baseText: {
     textAlign: 'center',
-    fontFamily: 'bold',
   },
   titleText: {
     fontSize: 20,
+    fontWeight: 'bold',
+    color: 'blue',
+  },
+  highlightText: {
+    color: 'red',
     fontWeight: 'bold',
   },
 });
